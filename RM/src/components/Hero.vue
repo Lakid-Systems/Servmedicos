@@ -2,8 +2,8 @@
 import mainPhoto from "../assets/images/hero.svg";
 import { themeColor } from "../data/items";
 
-const heroHeading = "Promote Your Products by Colorlib";
-const buttonSeeFeature = "See Features";
+const heroHeading = "Organiza tus espacios";
+const buttonSeeFeature = "De manera";
 const buttonPricing = "Pricing";
 </script>
 
@@ -27,17 +27,18 @@ const buttonPricing = "Pricing";
               </h1>
               <div class="excerpt" data-aos="fade-up" data-aos-delay="100">
                 <p>
-                  Another cool free html css template by
+                  ¿Cansado de perder tiempo buscando insumos médicos?
                   <span
                     style="
                       background-color: rgba(64, 123, 255, 0.07);
-                      color: #407bff;
+                      color: #5bae9e;
                     "
-                    >Colorlib</span
+                    >Lakid</span
                   >
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind texts.
-                  Separated they live in Bookmarksgrove right at the coast
+                  es sistema te permite gestionar el 
+                  inventario de insumos médicos, equipos y 
+                  medicamentos en tiempo real, evitando desperdicios 
+                  y asegurando disponibilidad en todo momento.
                 </p>
               </div>
               <p data-aos="fade-up" data-aos-delay="200">

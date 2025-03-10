@@ -1,5 +1,5 @@
-const themeColor = '#407BFF'
-const siteName = 'Launch'
+const themeColor = '#5bae9e'
+const siteName = 'LAKID'
 
 const contactInfo = {
     address: '43 Raymouth Rd. Baltemoer, London 3910',
