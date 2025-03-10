@@ -1,35 +1,39 @@
 <script setup>
 import mainPhoto from "../assets/images/service2.jpg";
+const service1Heading = "Nuestros servicios";
 const items = [
   {
     id: 1,
-    name: "Grow Your Business",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.",
+    name: "Espacios",
+    des: "Gestiona y optimiza la asignación de áreas dentro del hospital, asegurando una distribución eficiente de recursos y personal.",
   },
   {
     id: 2,
-    name: "Build Products",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.",
+    name: "Áreas",
+    des: "Monitorea y organiza cada departamento, desde quirófanos hasta almacenes, para un control preciso y una mejor operatividad.",
   },
   {
     id: 3,
-    name: "Success Every Day",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.",
-  },
-  {
-    id: 4,
-    name: "Bring Ideas to Life",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.",
+    name: "Insumos",
+    des: "Mantén un inventario detallado de equipos médicos y materiales esenciales, evitando desabastecimientos y optimizando costos.",
   },
 ];
-const total = 4;
+const total = 3;
 </script>
 
 <template>
-  <div class="untree_co-section bg-light">
+
+  <div class="untree_co-section bg-light" id="services-section">
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-lg-5 order-lg-2 js-custom-dots">
+          <span
+            class="caption"
+            data-aos="fade-up"
+            data-aos-delay="0"
+            :style="[{ color: themeColor }]"
+            >{{ service1Heading }}</span
+          >
           <a
             href="#"
             class="service link horizontal d-flex active"
@@ -123,25 +127,7 @@ const total = 4;
             data-aos="fade-left"
             data-aos-delay="300"
           >
-            <div class="service-icon color-4 mb-4">
-              <svg
-                class="bi bi-collection"
-                width="1em"
-                height="1em"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M14.5 13.5h-13A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5zm-13 1A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"
-                />
-              </svg>
-            </div>
-            <div class="service-contents">
-              <h3>{{ items[3].name }}</h3>
-              <p>{{ items[3].des }}</p>
-            </div>
+            
           </a>
         </div>
         <div class="col-lg-7">
@@ -157,10 +143,6 @@ const total = 4;
               </div>
               <div class="item">
                 <span class="number">{{ items[2].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
-              </div>
-              <div class="item">
-                <span class="number">{{ items[3].id }}/{{ total }}</span>
                 <img :src="mainPhoto" alt="Image" class="img-fluid" />
               </div>
             </div>

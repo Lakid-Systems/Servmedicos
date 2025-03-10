@@ -1,19 +1,19 @@
 <script setup>
 import { themeColor } from "../data/items";
-const heading = "Pricing";
-const subHeading = "Pricing for everyone. Choose your plan now!";
-const startButtonName = "Get Started";
+const heading = "Precios";
+const subHeading = "Cuanto te cuesta tenernos!";
+const startButtonName = "Empecemos";
 const packages = [
   {
-    name: "Free",
+    name: "Gratis",
     price: "0",
   },
   {
-    name: "Standard",
+    name: "Pro",
     price: "19.99",
   },
   {
-    name: "Premium",
+    name: "Pro max",
     price: "79.99",
   },
 ];

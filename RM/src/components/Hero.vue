@@ -1,10 +1,10 @@
 <script setup>
-import mainPhoto from "../assets/images/hero.svg";
+import mainPhoto from "../assets/images/hospital.png";
 import { themeColor } from "../data/items";
 
 const heroHeading = "Organiza tus espacios";
-const buttonSeeFeature = "De manera";
-const buttonPricing = "Pricing";
+const buttonSeeFeature = "Comprar";
+const buttonPricing = "Conoce mas";
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const buttonPricing = "Pricing";
               data-aos="fade-right"
               data-aos-delay="400"
             >
-              <img :src="mainPhoto" alt="Image" class="img-fluid" />
+            <img :src="mainPhoto" alt="Image" class="img-fluid" style="height: 80vh !important; width: auto;" />
             </div>
             <div class="col-lg-5">
               <h1 class="heading" data-aos="fade-up" data-aos-delay="0">
