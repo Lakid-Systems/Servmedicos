@@ -17,5 +17,3 @@ const resources = [
     </div>
   </div>
 </template>
-
-
