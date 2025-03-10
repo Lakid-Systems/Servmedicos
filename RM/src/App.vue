@@ -11,6 +11,7 @@ import About from "./components/About.vue";
 import Blog from "./components/Blog.vue";
 import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
+import Login from './components/Login.vue';
 </script>
 
 <template>
@@ -26,5 +27,6 @@ import Footer from "./components/Footer.vue";
   <About />
   <Blog />
   <Contact />
+  <Login />
   <Footer />
 </template>

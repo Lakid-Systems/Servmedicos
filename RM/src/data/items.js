@@ -8,5 +8,4 @@ const contactInfo = {
     email: 'info@mydomain.com',
     website: 'https://yourwebsite.com/'
 }
-
 export { themeColor, siteName, contactInfo }
