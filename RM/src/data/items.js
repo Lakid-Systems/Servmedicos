@@ -8,5 +8,4 @@ const contactInfo = {
     email: 'ventas@lakid.com',
     website: 'www.lakidsystems.com.mx'
 }
-
 export { themeColor, siteName, contactInfo }
