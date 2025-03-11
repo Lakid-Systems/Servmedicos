@@ -1,5 +1,7 @@
 <script setup>
-import mainPhoto from "../assets/images/service2.jpg";
+import espacio from "../assets/images/espacio.svg";
+import area from "../assets/images/area.svg";
+import insumos from "../assets/images/insumos.svg";
 const service1Heading = "Nuestros servicios";
 const items = [
   {
@@ -135,15 +137,15 @@ const total = 3;
             <div class="owl-single no-dots owl-carousel">
               <div class="item">
                 <span class="number">{{ items[0].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
+                <img :src="espacio" alt="Image" class="img-fluid" />
               </div>
               <div class="item">
                 <span class="number">{{ items[1].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
+                <img :src="area" alt="Image" class="img-fluid" />
               </div>
               <div class="item">
                 <span class="number">{{ items[2].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
+                <img :src="insumos" alt="Image" class="img-fluid" />
               </div>
             </div>
           </div>

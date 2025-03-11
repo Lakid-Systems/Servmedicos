@@ -1,15 +1,15 @@
 <script setup>
 import { themeColor, contactInfo } from "../data/items";
 
-const heading = "Get In Touch";
-const subHeading = "Far from the countries Vokalia and Consonantia";
-const contactInfoHeading = "Contact Information";
-const buttonSendMessage = "Send Message";
+const heading = "¡Hablemos!";
+const subHeading = "¿Listo para optimizar la gestión de tu hospital?";
+const contactInfoHeading = "Escríbenos y llevemos la eficiencia al siguiente nivel.";
+const buttonSendMessage = "Enviar Mensaje";
 const labels = {
-  firstName: "First Name",
-  lastName: "Last Name",
-  email: "Email Address",
-  message: "Message",
+  firstName: "Nombre",
+  lastName: "Apellido",
+  email: "Correo Electrónico",
+  message: "Mensaje",
 };
 </script>
 

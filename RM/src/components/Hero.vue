@@ -35,7 +35,7 @@ const buttonPricing = "Conoce mas";
                     "
                     >Lakid</span
                   >
-                  es sistema te permite gestionar el 
+                  es un sistema que te permite gestionar el 
                   inventario de insumos médicos, equipos y 
                   medicamentos en tiempo real, evitando desperdicios 
                   y asegurando disponibilidad en todo momento.

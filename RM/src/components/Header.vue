@@ -13,7 +13,6 @@ import { themeColor, siteName } from "../data/items";
             <a href="#home-section" class="nav-link">Inicio</a>
           </li>
           <li><a href="#services-section" class="nav-link">Servicios</a></li>
-          <li><a href="#pricing-section" class="nav-link">Precios</a></li>
           <li><a href="#about-section" class="nav-link">Nosotros</a></li>
           <li><a href="#contact-section" class="nav-link">Contactos</a></li>
         </ul>

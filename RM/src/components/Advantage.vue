@@ -54,14 +54,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[0].name }}</h3>
               <p>{{ advantages[0].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
@@ -89,14 +81,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[1].name }}</h3>
               <p>{{ advantages[1].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
@@ -124,14 +108,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[2].name }}</h3>
               <p>{{ advantages[2].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
@@ -155,14 +131,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[3].name }}</h3>
               <p>{{ advantages[3].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
