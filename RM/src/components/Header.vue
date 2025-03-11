@@ -19,7 +19,10 @@ import { themeColor, siteName } from "../data/items";
         <ul
           class="js-clone-nav d-none mt-1 d-lg-inline-block site-menu float-right"
         >
-          <li class="cta-button-outline" style="margin-right: 5px;"><a href="#">Inicia Sesion</a></li>
+                  <li class="cta-button-outline" style="margin-right: 5px;">
+            <router-link to="/login">Inicia Sesión</router-link>
+          </li>
+
           <li class="cta-primary">
             <a href="#" :style="[{ backgroundColor: themeColor }]">Registrate</a>
           </li>

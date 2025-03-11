@@ -1,19 +1,17 @@
 <template>
-    <div>
-      <!-- Aquí puedes colocar el contenido de tu página -->
-    </div>
+
   </template>
   
   <script>
-  // Objeto global para manejar el script de Chatbase
+ 
   const chatbaseScript = {
     loadScript() {
       if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-        window.chatbase = (...params) => { // Cambié 'arguments' por 'params'
+        window.chatbase = (...params) => { 
           if (!window.chatbase.q) {
             window.chatbase.q = [];
           }
-          window.chatbase.q.push(params); // Usa 'params' en lugar de 'arguments'
+          window.chatbase.q.push(params); 
         };
         window.chatbase = new Proxy(window.chatbase, {
           get(target, prop) {
@@ -46,14 +44,12 @@
   
   export default {
     mounted() {
-      // Inicializamos el objeto chatbaseScript cuando el componente se monta
       chatbaseScript.init();
     }
   };
   </script>
   
   <style scoped>
-  /* Estilo para mantener el script en la parte inferior izquierda */
   body {
     position: relative;
   }

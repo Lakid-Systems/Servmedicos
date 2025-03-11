@@ -1,8 +1,6 @@
 <script setup>
-import { themeColor } from "../data/items";
 const heading = "¿Por qué elegirnos?";
 const subHeading = "Te decimos porque";
-const buttonLearnMore = "Learn More";
 const advantages = [
   {
     name: "Eficiencia garantizada",
