@@ -1,15 +1,15 @@
 <script setup>
 import { contactInfo } from "../data/items";
 
-const copyrightText = "Copyright 2023, All rights reserved.";
-const column1Heading = "About Launch";
+const copyrightText = "Copyright 2025, Todos Los derechos reservados.";
+const column1Heading = "Lakid";
 const column1Text =
-  "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.";
-const column2Heading = "Projects";
-const column3Heading = "Services";
-const column4Heading = "Contact";
+  "Optimizamos la gestión de recursos hospitalarios con tecnología eficiente y segura.";
+const column2Heading = "Proyectos";
+const column3Heading = "Servicios";
+const column4Heading = "Contacto";
 
-const connectHeading = "Connect";
+const connectHeading = "Siguenos";
 
 const socialItems = [
   {
@@ -80,11 +80,10 @@ const socialItems = [
           <div class="widget">
             <h3>{{ column2Heading }}</h3>
             <ul class="list-unstyled float-left links">
-              <li><a href="#">La Lega Stadium</a></li>
-              <li><a href="#">France Building</a></li>
-              <li><a href="#">22 New Homes</a></li>
-              <li><a href="#">Manage Center</a></li>
-              <li><a href="#">Sports Hall</a></li>
+              <li><a href="#">Lakid systems</a></li>
+              <li><a href="#">Ecoluz Urbana</a></li>
+              <li><a href="#">KalidGPT</a></li>
+
             </ul>
           </div>
         </div>
@@ -92,10 +91,9 @@ const socialItems = [
           <div class="widget">
             <h3>{{ column3Heading }}</h3>
             <ul class="list-unstyled float-left links">
-              <li><a href="#">Architect</a></li>
-              <li><a href="#">Interior Design</a></li>
-              <li><a href="#">Landscape Design</a></li>
-              <li><a href="#">Consultancy</a></li>
+              <li><a href="#">Desarrollo de software</a></li>
+              <li><a href="#">Soporte y mantenimiento</a></li>
+              <li><a href="#">Redes e IoT</a></li>
             </ul>
           </div>
         </div>

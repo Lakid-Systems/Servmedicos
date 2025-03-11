@@ -1,11 +1,11 @@
 <script setup>
 import { themeColor } from "../data/items";
-import mainPhoto from "../assets/images/about.svg";
+import mainPhoto from "../assets/images/developer.svg";
 
-const heading = "About";
-const subHeading = "About Us";
+const heading = "Nosotros";
+const subHeading = "¿Quienes somos?";
 const totalMembers = "50";
-const totalTeam = "20";
+const totalTeam = "5";
 </script>
 
 <template>
@@ -24,17 +24,14 @@ const totalTeam = "20";
           </div>
           <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in Bookmarksgrove right at the coast
+              En Lakid, estamos comprometidos con la eficiencia y la 
+              innovación en la gestión hospitalaria. Nuestro objetivo es transformar la gestión 
+              hospitalaria con soluciones inteligentes que optimicen procesos y mejoren la atención a los pacientes.
             </p>
             <p>
-              Separated they
-              <span class="highlight"
-                >live in Bookmarksgrove right at the coast of the
-                Semantics</span
-              >, a large language ocean. A small river named Duden flows by
-              their place and supplies it with the necessary regelialia.
+              Con un enfoque en tecnología, automatización y seguridad,  
+              <span class="highlight">facilitamos la administración de espacios, áreas, insumos y consumibles,</span
+              > reduciendo desperdicios y mejorando la toma de decisiones.
             </p>
           </div>
           <ul
@@ -42,24 +39,24 @@ const totalTeam = "20";
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <li>There live the blind texts</li>
-            <li>Far far away behind the word</li>
-            <li>Their place and supplies</li>
+            <li>Eficiencia sin límites</li>
+            <li>Control total, cero desperdicios</li>
+            <li>Datos que potencian decisiones</li>
           </ul>
           <div class="row count-numbers">
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
               <span class="counter d-block"
                 ><span :data-number="totalMembers">{{ totalMembers }}</span
-                ><span>M</span></span
+                ></span
               >
-              <span class="caption-2">Members</span>
+              <span class="caption-2">Empresas con nosotros</span>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <span class="counter d-block"
                 ><span :data-number="totalTeam">{{ totalTeam }}</span
                 ><span></span
               ></span>
-              <span class="caption-2">Team</span>
+              <span class="caption-2">Mentes detras de esto </span>
             </div>
           </div>
         </div>

@@ -1,24 +1,24 @@
 <script setup>
 import { themeColor } from "../data/items";
-const heading = "Advantage of using our products";
-const subHeading = "Far from the countries Vokalia and Consonantia";
+const heading = "¿Por qué elegirnos?";
+const subHeading = "Te decimos porque";
 const buttonLearnMore = "Learn More";
 const advantages = [
   {
-    name: "Grow Your Business",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    name: "Eficiencia garantizada",
+    des: "Optimizamos la gestión de recursos hospitalarios para reducir costos y mejorar la disponibilidad de insumos.",
   },
   {
-    name: "Build Products",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    name: "Tecnología inteligente",
+    des: "Nuestro sistema usa reportes y automatización para agilizar procesos y mejorar la toma de decisiones.",
   },
   {
-    name: "Success Every Day",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    name: "Seguridad y control",
+    des: "Implementamos permisos personalizados para garantizar un acceso seguro y administración confiable.",
   },
   {
-    name: "Bring Ideas to Life",
-    des: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    name: "Soporte especializado",
+    des: "Contamos con un equipo experto listo para brindar asistencia y personalizar la solución según tus necesidades.",
   },
 ];
 </script>
@@ -54,14 +54,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[0].name }}</h3>
               <p>{{ advantages[0].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
@@ -89,14 +81,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[1].name }}</h3>
               <p>{{ advantages[1].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
@@ -124,14 +108,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[2].name }}</h3>
               <p>{{ advantages[2].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
@@ -155,14 +131,6 @@ const advantages = [
             <div class="service-contents">
               <h3>{{ advantages[3].name }}</h3>
               <p>{{ advantages[3].des }}</p>
-              <p>
-                <a
-                  href="#"
-                  class="read-more"
-                  :style="[{ color: themeColor }]"
-                  >{{ buttonLearnMore }}</a
-                >
-              </p>
             </div>
           </div>
         </div>
