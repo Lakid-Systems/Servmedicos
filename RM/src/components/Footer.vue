@@ -2,7 +2,7 @@
 import { contactInfo } from "../data/items";
 
 const copyrightText = "Copyright 2025, Todos Los derechos reservados.";
-const column1Heading = "Lakid";
+const column1Heading = "Lakid+";
 const column1Text =
   "Optimizamos la gestión de recursos hospitalarios con tecnología eficiente y segura.";
 const column2Heading = "Proyectos";

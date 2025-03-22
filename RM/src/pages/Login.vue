@@ -1,5 +1,5 @@
 <script setup>
-import { themeColor } from "../data/items";
+import { themeColor, siteName } from "../data/items";
 
 const heading = "Inicie sesión en su cuenta";
 const labels = {
@@ -13,7 +13,8 @@ const labels = {
     <div class="container">
       <div class="row mb-4" data-aos="fade-up" data-aos-delay="0">
         <div class="col-12 text-center">
-          <h2 class="heading">{{ heading }}</h2>
+          <h2 class="heading">LAKID<span  style="  color: #5bae9e;">+</span></h2>
+          <h4 class="">{{ heading }}</h4>
         </div>
       </div>
       <div class="row justify-content-center">
