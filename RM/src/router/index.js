@@ -4,8 +4,10 @@ import Home from '../pages/home.vue';
 import Dashboard from '../pages/dashboard.vue';
 import NotFound from '../pages/NotFound.vue';
 import panel from '../components/panel.vue';
-import prueba from '../components/prueba.vue';
-
+import espacios_vista from '../components/espacios_vista.vue';
+import estatus from '../pages/estatus.vue';
+import insumos from '../components/insumos.vue';
+import areas from '../components/areas.vue';
 const routes = [
   {
     path: '/',
@@ -25,7 +27,11 @@ const routes = [
         path: 'dashboard',
         name: 'dashboard',
         component: Dashboard,
-      },{ path: 'prueba', name: 'prueba', component: prueba },{ path: 'Home', name: 'Home', component: Home },
+      },{ 
+        path: 'estatus', name: 'estatus', component: estatus },{
+          path: 'insumos', name: 'insumos', component: insumos },{
+            path: 'areas', name: 'areas', component: areas },{
+              path: 'espacios_vista', name: 'espacios_vista', component: espacios_vista },
     ],
   },
   {

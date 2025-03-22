@@ -15,7 +15,7 @@
   </template>
   
   <script setup>
-  import error from "../assets/images/404.svg";
+  import error from "../assets/images/404.png";
   </script>
   
   <style scoped>

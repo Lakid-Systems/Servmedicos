@@ -4,8 +4,8 @@ import mainPhoto from "../assets/images/developer.svg";
 
 const heading = "Nosotros";
 const subHeading = "¿Quienes somos?";
-const totalMembers = "50";
-const totalTeam = "5";
+const totalMembers = "100";
+const totalTeam = "2";
 </script>
 
 <template>
@@ -56,7 +56,7 @@ const totalTeam = "5";
                 ><span :data-number="totalTeam">{{ totalTeam }}</span
                 ><span></span
               ></span>
-              <span class="caption-2">Mentes detras de esto </span>
+              <span class="caption-2">anios de servicio</span>
             </div>
           </div>
         </div>

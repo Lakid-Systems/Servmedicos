@@ -6,7 +6,7 @@ import { themeColor, siteName } from "../data/items";
     <div class="container">
       <div class="site-navigation">
         <a href="" class="logo m-0 float-left"
-          >{{ siteName }}<span  style=" color: #5bae9e;">+</span></a>
+          >{{ siteName }}<span  style=" color: #5bae9e;">✙</span></a>
         <ul class="js-clone-nav d-none d-lg-inline-block site-menu float-left">
           <li class="active">
             <a href="#home-section" class="nav-link">Inicio</a>

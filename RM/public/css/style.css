@@ -121,10 +121,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 
 .logo {
   font-size: 24px;
-  color: #ffffff;
+  color: #000000;
   font-weight: 700; }
   .logo:hover {
-    color: #ffffff; }
+    color: #000000; }
 
 .site-nav {
   position: absolute;

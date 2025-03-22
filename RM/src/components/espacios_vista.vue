@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-
+import Header2 from './Header2.vue';
 // Datos de prueba para espacios
 const espacios = ref([
   {

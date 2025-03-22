@@ -13,7 +13,7 @@ const labels = {
     <div class="container">
       <div class="row mb-4" data-aos="fade-up" data-aos-delay="0">
         <div class="col-12 text-center">
-          <h2 class="heading">LAKID<span  style="  color: #5bae9e;">+</span></h2>
+          <h2 class="heading logo m-0  " >LAKID<span  style="  color: #5bae9e;">✙</span></h2>
           <h4 class="">{{ heading }}</h4>
         </div>
       </div>
@@ -28,7 +28,7 @@ const labels = {
               <label for="message">{{ labels.message }}</label>
               <input type="password" class="form-control" id="password" />
             </div>
-            <router-link to="/dashboard">
+            <router-link to="/estatus">
               <button
                 type="submit"
                 class="btn btn-primary"
