@@ -56,7 +56,7 @@ const totalTeam = "2";
                 ><span :data-number="totalTeam">{{ totalTeam }}</span
                 ><span></span
               ></span>
-              <span class="caption-2">anios de servicio</span>
+              <span class="caption-2">años de servicio</span>
             </div>
           </div>
         </div>
