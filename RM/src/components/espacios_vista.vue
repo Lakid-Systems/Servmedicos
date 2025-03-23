@@ -28,16 +28,47 @@ const espacios = ref([
     estado: "Disponible",
   },
 ]);
+
+const editarEspacio = (id) => {
+  alert(`Editar espacio con ID: ${id}`);
+};
+
+const eliminarEspacio = (id) => {
+  alert(`Eliminar espacio con ID: ${id}`);
+};
 </script>
 
 <template>
   <div class="espacios-container">
     <h2>Lista de Espacios</h2>
-    <ul>
-      <li v-for="espacio in espacios" :key="espacio.id">
-        <strong>{{ espacio.nombre }}</strong> - Capacidad: {{ espacio.capacidad }} - Estado: <span :class="espacio.estado.toLowerCase()">{{ espacio.estado }}</span>
-      </li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Capacidad</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="espacio in espacios" :key="espacio.id">
+          <td>{{ espacio.nombre }}</td>
+          <td>{{ espacio.capacidad }}</td>
+          <td :class="espacio.estado.toLowerCase()">{{ espacio.estado }}</td>
+
+          <!-- GENERANDO BOTONES DE ACCIONES DE EDICIÓN Y ELIMINACIÓN -->
+          <td>
+            <button @click="editarEspacio(espacio.id)" class="btn btn-edit">
+              ✏️
+            </button>
+            <button @click="eliminarEspacio(espacio.id)" class="btn btn-delete">
+              🗑️
+            </button>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -48,17 +79,24 @@ const espacios = ref([
   font-family: Arial, sans-serif;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
 }
 
-li {
-  background: #f4f4f4;
-  margin: 8px 0;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 .disponible {
@@ -71,5 +109,25 @@ li {
 
 .mantenimiento {
   color: #ffc107;
+}
+
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 4px;
+}
+
+.btn-edit {
+  color: #007bff;
+}
+
+.btn-delete {
+  color: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
 </style>
