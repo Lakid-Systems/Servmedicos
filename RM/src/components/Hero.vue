@@ -19,7 +19,7 @@ const buttonPricing = "Conoce mas";
               data-aos="fade-right"
               data-aos-delay="400"
             >
-            <img :src="mainPhoto" alt="Image" class="img-fluid" style="height: 80vh !important; width: auto;" />
+            <img :src="mainPhoto" alt="Image" class="img-fluid" style="height: 70vh; width: auto; " />
             </div>
             <div class="col-lg-5">
               <h1 class="heading" data-aos="fade-up" data-aos-delay="0">

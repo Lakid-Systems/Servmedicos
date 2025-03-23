@@ -30,28 +30,28 @@
       data: {
         labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'], // Meses del año
         datasets: [
-          {
-            label: 'Pediatría',
-            data: [30, 40, 35, 50, 45, 55], // Datos de ejemplo para Pediatría
-            borderColor: 'rgba(255, 99, 132, 1)', // Color de la línea
-            borderWidth: 2,
-            fill: false, // No rellenar el área bajo la línea
-          },
-          {
-            label: 'Medicina General',
-            data: [50, 55, 60, 65, 70, 75], // Datos de ejemplo para Medicina General
-            borderColor: 'rgba(54, 162, 235, 1)', // Color de la línea
-            borderWidth: 2,
-            fill: false, // No rellenar el área bajo la línea
-          },
-          {
-            label: 'Ginecología',
-            data: [20, 25, 30, 35, 40, 45], // Datos de ejemplo para Ginecología
-            borderColor: 'rgba(75, 192, 192, 1)', // Color de la línea
-            borderWidth: 2,
-            fill: false, // No rellenar el área bajo la línea
-          },
-        ],
+                    {
+                      label: 'Pediatría',
+                      data: [30, 40, 35, 50, 45, 55],
+                      borderColor: 'rgba(91, 174, 158, 1)', // #5bae9e (verde)
+                      borderWidth: 2,
+                      fill: false, 
+                    },
+                    {
+                      label: 'Medicina General',
+                      data: [50, 55, 60, 65, 70, 75],
+                      borderColor: 'rgba(0, 151, 167, 1)', // Turquesa
+                      borderWidth: 2,
+                      fill: false, 
+                    },
+                    {
+                      label: 'Ginecología',
+                      data: [20, 25, 30, 35, 40, 45],
+                      borderColor: 'rgba(34, 193, 195, 1)', // Azul turquesa
+                      borderWidth: 2,
+                      fill: false, 
+                    },
+                  ],
       },
       options: {
         responsive: true,
@@ -126,12 +126,12 @@
   }
   
   .chart-container {
-    position: relative; /* Asegura que el canvas se ajuste correctamente */
-    height: 300px; /* Altura fija para el contenedor de la gráfica */
+    position: relative; 
+    height: 300px; 
   }
   
   canvas {
     max-width: 100%;
-    height: 100% !important; /* Asegura que el canvas ocupe toda la altura del contenedor */
+    height: 100% !important; 
   }
   </style>

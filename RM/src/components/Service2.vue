@@ -98,7 +98,7 @@
                 
                 <!-- Mostramos la imagen correspondiente, si no tiene imagen se muestra una de placeholder -->
                 <img 
-                  :src="images[item.id] || 'https://via.placeholder.com/300'" 
+                  :src="images[item.id] || 'https://i.gifer.com/S9iW.gif'" 
                   alt="Imagen de {{ item.name }}" 
                   class="img-fluid"
                 />

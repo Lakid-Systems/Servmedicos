@@ -10,8 +10,8 @@ const labels = {
 };
 
 // GENERANDO DATOS PARA PRUEBA DE CONEXION A DASHOBOARD.............
-const validEmail = "tolentinodomingodiego@gmail.com";
-const validPassword = "aldo";
+const validEmail = "test@gmail.com";
+const validPassword = "1234";
 
 // VERIFICANDO DATOS DE INICIO DE SESION.......
 const email = ref("");
@@ -24,7 +24,7 @@ const router = useRouter();
 const handleLogin = (e) => {
   e.preventDefault();
   if (email.value === validEmail && password.value === validPassword) {
-    router.push("/dashboard");
+    router.push("/estatus");
   } else {
     alert("Correo o contraseña incorrectos");
   }

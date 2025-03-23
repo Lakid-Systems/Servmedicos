@@ -10,7 +10,9 @@ import espacios from '../components/espacios.vue';
 </script>
 
 <template>  
-<Header2 /> 
+<div style=" ">
+      <Header2> </Header2>
+   </div>
 <div style="display: flex; align-items: center;  ;  ">
     <estatus_dash />  
 </div>
