@@ -12,7 +12,6 @@
       <div class="content">
         <h4>{{ card.title }}</h4>
         <p>{{ card.value }}</p>
-        <span>{{ card.info }}</span>
       </div>
     </div>
   </div>
@@ -31,8 +30,9 @@ export default {
       cards: [
         { title: 'Capacidad', value: '0%', info: 'Ahora', icon: '../src/assets/images/percent.png' },
         { title: 'Espacios en uso', value: '0 operativos de 0', info: 'Ahora', icon: '../src/assets/images/uso.png' },
-        { title: 'Mantenimiento', value: '0 de 0', info: 'Ultimo dia', icon: '../src/assets/images/mto.png' },
-        { title: 'Fuera de servicio', value: '0 de 0', info: 'Ahora', icon: '../src/assets/images/off.png' }
+        { title: 'Espacios en mantenimiento', value: '0 de 0', info: 'Ultimo dia', icon: '../src/assets/images/mto.png' },
+        
+        { title: 'Espacios fuera de servicio', value: '0 de 0', info: 'Ahora', icon: '../src/assets/images/off.png' }
       ],
       intervalId: null, 
       previousData: null, 
