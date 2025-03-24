@@ -55,7 +55,7 @@ export default {
         if (!response.ok) {
           throw new Error('Error al obtener los datos');
         }
-        const data = await response.json(); // Suponiendo que la respuesta es un JSON
+        const data = await response.json();
         this.rooms = data; // Asigna los datos a la variable rooms
       } catch (error) {
         console.error("Error al obtener los datos:", error);
