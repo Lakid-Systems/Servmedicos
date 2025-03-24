@@ -17,7 +17,10 @@ const password = ref("");
 const router = useRouter();
 
 // URL de la API
-const apiUrl = "https://integradora-backend-linux.onrender.com/login"; // URL QUE CONECTA A LA API
+const apiUrl = "https://integradora-backend-linux.onrender.com/login";
+
+// Variable global para almacenar el token
+let token = "";
 
 // Función para manejar el inicio de sesión
 const handleLogin = async (e) => {
@@ -40,6 +43,8 @@ const handleLogin = async (e) => {
 
     const data = await response.json();
     console.log("Respuesta de la API:", data);
+    token = data.token;
+    localStorage.setItem("authToken", token);
 
     // Redirigir al usuario si el inicio de sesión es exitoso
     router.push("/estatus");
@@ -48,6 +53,11 @@ const handleLogin = async (e) => {
     alert("Correo o contraseña incorrectos");
   }
 };
+
+// Cargar el token al iniciar la aplicación (si existe)
+if (localStorage.getItem("authToken")) {
+  token = localStorage.getItem("authToken");
+}
 </script>
 
 <template>
@@ -105,13 +115,13 @@ const handleLogin = async (e) => {
 </template>
 
 <style scoped>
-  .row.justify-content-center {
-    display: flex;
-    justify-content: center;
-  }
+.row.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
 
-  .col-lg-7 {
-    display: flex;
-    justify-content: center;
-  }
+.col-lg-7 {
+  display: flex;
+  justify-content: center;
+}
 </style>
