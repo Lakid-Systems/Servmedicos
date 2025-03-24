@@ -8,7 +8,7 @@ const sidebarItems = [
   { name: "Dashboard", route: "/estatus" },
   { name: "Espacios", route: "/espacios_vista" },
   { name: "Áreas", route: "/areas" },
-  { name: "Insumos", route: "/insumos" },
+  { name: "Consumibles", route: "/insumos" },
 ];
 
 // Función para manejar el logout
