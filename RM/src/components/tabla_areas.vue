@@ -22,58 +22,66 @@
   </template>
   
   <script>
-  export default {
-    data() {
-      return {
-        rooms: []
-      };
-    },
-    mounted() {
-      this.getAreasMedicas();
-    },
-    methods: {
-      async getAreasMedicas() {
-        try {
-          const token = localStorage.getItem('token'); 
-  
-          if (!token) {
-            console.error("Token de autenticación no encontrado.");
-            return;
+export default {
+  data() {
+    return {
+      rooms: [],
+      intervalId: null, 
+    };
+  },
+  mounted() {
+    this.getAreasMedicas();
+    this.startAutoUpdate(); 
+  },
+  beforeUnmount() {
+    clearInterval(this.intervalId); 
+  },
+  methods: {
+    async getAreasMedicas() {
+      try {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+          console.error("Token de autenticación no encontrado.");
+          return;
+        }
+
+        const response = await fetch('https://integradora-backend-linux.onrender.com/areas_medicas', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
           }
-          const response = await fetch('https://integradora-backend-linux.onrender.com/areas_medicas', {
-            method: 'GET',
-            headers: {
-              'Authorization': `Bearer ${token}`,
-              'Content-Type': 'application/json',
-            }
-          });
-  
-          
-          if (!response.ok) {
-            console.error("Error al obtener los datos. Estado: ", response.status);
-            return;
-          }
-  
-          
-          const data = await response.json();
-  
-          
-          if (Array.isArray(data)) {
+        });
+
+        if (!response.ok) {
+          console.error("Error al obtener los datos. Estado: ", response.status);
+          return;
+        }
+
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          if (JSON.stringify(this.rooms) !== JSON.stringify(data)) {
             this.rooms = data.map(area => ({
               Nombre: area.Nombre,
               Descripcion: area.Descripcion,
               Estatus: area.Estatus,
             }));
-          } else {
-            console.error("La respuesta no es un array válido", data);
           }
-        } catch (error) {
-          console.error("Hubo un error al obtener los datos:", error);
+        } else {
+          console.error("La respuesta no es un array válido", data);
         }
+      } catch (error) {
+        console.error("Hubo un error al obtener los datos:", error);
       }
+    },
+
+    startAutoUpdate() {
+      this.intervalId = setInterval(this.getAreasMedicas, 3000); 
     }
-  };
-  </script>
+  }
+};
+</script>
+
   
   <style scoped>
   .table-container {

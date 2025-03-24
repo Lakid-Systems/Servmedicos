@@ -46,7 +46,7 @@
     methods: {
       async getInsumos() {
         try {
-          const token = localStorage.getItem('token');
+          const token = localStorage.getItem('authToken');
           if (!token) {
             console.error("Token de autenticación no encontrado.");
             return;

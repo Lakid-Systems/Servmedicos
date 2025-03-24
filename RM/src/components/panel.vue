@@ -13,8 +13,10 @@ const sidebarItems = [
 
 // Función para manejar el logout
 const logout = () => {
+  localStorage.removeItem("authToken"); // Elimina el token del almacenamiento local
   router.push("/login"); // Redirige a la página de login
 };
+
 </script>
 
 <template>
