@@ -5,10 +5,10 @@ import { useRouter } from "vue-router"; // Importa useRouter para la redirecció
 const router = useRouter(); // Obtén la instancia del router
 
 const sidebarItems = [
-  { name: "Dashboard", route: "/estatus" },
-  { name: "Espacios", route: "/espacios_vista" },
-  { name: "Áreas", route: "/areas" },
-  { name: "Consumibles", route: "/insumos" },
+  { name: "Dashboard", route: "/estatus", icon: "../src/assets/images/dashboard.png" },
+  { name: "Espacios", route: "/espacios_vista", icon: "../src/assets/images/espacios.png" },
+  { name: "Áreas", route: "/areas", icon: "../src/assets/images/areas.png" },
+  { name: "Consumibles", route: "/insumos", icon: "../src/assets/images/consumibles.png" },
 ];
 
 // Función para manejar el logout
@@ -16,7 +16,6 @@ const logout = () => {
   localStorage.removeItem("authToken"); // Elimina el token del almacenamiento local
   router.push("/login"); // Redirige a la página de login
 };
-
 </script>
 
 <template>
@@ -26,6 +25,7 @@ const logout = () => {
       <ul class="sidebar-menu">
         <li v-for="item in sidebarItems" :key="item.name" class="sidebar-item">
           <router-link :to="item.route" class="sidebar-link" active-class="active">
+            <img :src="item.icon" alt="icon" class="icon" />
             {{ item.name }}
           </router-link>
         </li>
@@ -50,9 +50,9 @@ body, html {
 .layout {
   display: flex;
   min-height: 100vh;
-  margin: 0; /* Asegura que no haya márgenes externos */
-  padding: 0; /* Asegura que no haya padding externo */
-  position: relative; /* Necesario para posicionar el botón de salir */
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 .sidebar {
@@ -83,10 +83,10 @@ body, html {
   color: #212529;
   font-weight: 500;
   padding: 10px 15px;
-  display: block;
+  display: flex;
+  align-items: center;
   border-radius: 5px;
   transition: background-color 0.2s;
-  align-items: center;
 }
 
 .sidebar-link:hover {
@@ -100,13 +100,17 @@ body, html {
   color: #ffffff;
 }
 
+.icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
 .content {
   flex: 1;
   overflow: auto;
   background-color: #ffffff;
-  min-width: none;
 }
-
 
 .logout-button {
   position: fixed;

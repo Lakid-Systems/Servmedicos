@@ -27,7 +27,7 @@ const spaces = ref([]);
 
 
 const fetchData = async () => {
-  try {
+  try { 
     // Obtener todos los datos de la API
     const response = await fetch('https://space-api-7odx.onrender.com/');
     const data = await response.json();

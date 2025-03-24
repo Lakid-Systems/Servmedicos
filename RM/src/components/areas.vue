@@ -12,7 +12,6 @@ import Tabla_areas from '../components/tabla_areas.vue';
     <Tabla_areas> </Tabla_areas>
     <div style="display: flex; align-items: center; width: 100%;">
     <div style="width: 90%;">
-        <lista_areas />
     </div>
     <div style="width: 30%;">
 
