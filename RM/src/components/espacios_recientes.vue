@@ -3,13 +3,13 @@
     <div class="main-card" data-aos="fade-up">
       <div class="cards-container">
         <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-header">Últimas áreas usadas</div>
+          <div class="card-header">Últimos espacios ocupados</div>
           <div class="card-body">
-            <h5 class="card-title">Últimas 5 áreas usadas</h5>
-            <ul class="areas-list">
-              <li v-for="(area, index) in areas" :key="index" class="area-item">
-                <span class="area-name">{{ area.name }}</span>
-                <span class="area-value">{{ area.count }} veces</span>
+            <h5 class="card-title">Espacios recientemente utilizados</h5>
+            <ul class="spaces-list">
+              <li v-for="(space, index) in spaces" :key="index" class="space-item">
+                <span class="space-name">{{ space.name }}</span>
+                <span class="space-time">{{ space.time }}</span>
               </li>
             </ul>
           </div>
@@ -23,41 +23,26 @@
 import { ref, onMounted } from 'vue';
 
 
-const areas = ref([]);
+const spaces = ref([]);
 
 
 const fetchData = async () => {
   try {
-    
+    // Obtener todos los datos de la API
     const response = await fetch('https://space-api-7odx.onrender.com/');
     const data = await response.json();
 
    
     const sortedData = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-    
-    const last5Areas = sortedData.slice(0, 5).map(item => item.area);
-
-    
-    const areaCount = {};
-
-    data.forEach(item => {
-      const area = item.area;
-      if (areaCount[area]) {
-        areaCount[area]++;
-      } else {
-        areaCount[area] = 1;
-      }
-    });
-
-    
-    const areasWithCount = last5Areas.map(area => ({
-      name: area,
-      count: areaCount[area] || 0,
+   
+    const last5Spaces = sortedData.slice(0, 5).map(item => ({
+      name: item.espacio,
+      time: new Date(item.createdAt).toLocaleString(), // Convertir la fecha a un formato legible
     }));
 
     
-    areas.value = areasWithCount;
+    spaces.value = last5Spaces;
   } catch (error) {
     console.error('Error al obtener los datos:', error);
   }
@@ -114,13 +99,13 @@ onMounted(() => {
   margin-bottom: 15px;
 }
 
-.areas-list {
+.spaces-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.area-item {
+.space-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,16 +113,16 @@ onMounted(() => {
   border-bottom: 1px solid #eee;
 }
 
-.area-item:last-child {
+.space-item:last-child {
   border-bottom: none;
 }
 
-.area-name {
+.space-name {
   font-size: 1em;
   color: #333;
 }
 
-.area-value {
+.space-time {
   font-size: 0.9em;
   color: #666;
 }

@@ -5,7 +5,7 @@ import grafica_area from '../components/grafica_area_espacios.vue';
 import graficas_areas_linear from '../components/graficas_areas_linear.vue';
 import lista_areas from '../components/lista_areas.vue';
 import Footer from '../components/Footer.vue';
-import espacios from '../components/espacios.vue';
+import espacios from '../components/espacios_recientes.vue';
  
 </script>
 
