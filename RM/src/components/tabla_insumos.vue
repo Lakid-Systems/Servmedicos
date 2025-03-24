@@ -37,11 +37,16 @@
   export default {
     data() {
       return {
-        rooms: []
+        rooms: [],
+        intervalId: null, // Para guardar el ID del intervalo
       };
     },
     mounted() {
       this.getInsumos();
+      this.startAutoUpdate(); // Inicia la actualización automática
+    },
+    beforeUnmount() {
+      clearInterval(this.intervalId); // Detiene el intervalo al salir del componente
     },
     methods: {
       async getInsumos() {
@@ -64,27 +69,35 @@
           }
           const data = await response.json();
           if (Array.isArray(data)) {
-            this.rooms = data.map(insumo => ({
-              nombre: insumo.nombre,
-              descripcion: insumo.descripcion,
-              tipo: insumo.tipo,
-              departamento: insumo.departamento,
-              cantidad_existencia: insumo.cantidad_existencia,
-              detalle: insumo.detalle,
-              estatus: insumo.estatus,
-              observaciones: insumo.observaciones,
-              espacio_medico: insumo.espacio_medico
-            }));
+            // Verifica si hubo cambios antes de actualizar
+            if (JSON.stringify(this.rooms) !== JSON.stringify(data)) {
+              this.rooms = data.map(insumo => ({
+                nombre: insumo.nombre,
+                descripcion: insumo.descripcion,
+                tipo: insumo.tipo,
+                departamento: insumo.departamento,
+                cantidad_existencia: insumo.cantidad_existencia,
+                detalle: insumo.detalle,
+                estatus: insumo.estatus,
+                observaciones: insumo.observaciones,
+                espacio_medico: insumo.espacio_medico
+              }));
+            }
           } else {
             console.error("La respuesta no es un array válido", data);
           }
         } catch (error) {
           console.error("Hubo un error al obtener los datos:", error);
         }
+      },
+  
+      startAutoUpdate() {
+        this.intervalId = setInterval(this.getInsumos, 3000); 
       }
     }
   };
   </script>
+  
   
   <style scoped>
   .table-container {

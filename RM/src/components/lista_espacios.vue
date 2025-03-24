@@ -29,7 +29,8 @@ export default {
   data() {
     return {
       searchQuery: '',
-      rooms: [], // Cambiar a un array vacío, ya que se cargará desde la URL
+      rooms: [],  
+      previousRooms: [],  
     };
   },
   computed: {
@@ -40,8 +41,12 @@ export default {
     },
   },
   mounted() {
-    // Realiza la solicitud HTTP al cargar el componente
+    
     this.fetchRooms();
+    this.startAutoUpdate();  
+  },
+  beforeUnmount() {
+    clearInterval(this.intervalId); 
   },
   methods: {
     async fetchRooms() {
@@ -56,10 +61,18 @@ export default {
           throw new Error('Error al obtener los datos');
         }
         const data = await response.json();
-        this.rooms = data; // Asigna los datos a la variable rooms
+
+        // Compara si los datos han cambiado antes de actualizarlos
+        if (JSON.stringify(this.rooms) !== JSON.stringify(data)) {
+          this.previousRooms = [...this.rooms];  
+          this.rooms = data;  
+        }
       } catch (error) {
         console.error("Error al obtener los datos:", error);
       }
+    },
+    startAutoUpdate() {
+      this.intervalId = setInterval(this.fetchRooms, 3000); // Actualiza cada 3 segundos
     },
   },
 };

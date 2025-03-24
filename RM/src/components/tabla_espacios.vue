@@ -13,7 +13,7 @@
         <tr v-for="room in rooms" :key="room.nombre">
           <td>{{ room.tipo }}</td>
           <td>{{ room.nombre }}</td>
-          <td :class="(room.estatus || '').toLowerCase()">{{ room.estatus }}</td>
+          <td :class="(String(room.estatus) || '').toLowerCase()">{{ room.estatus }}</td>
           <td>{{ room.capacidad }}</td>
         </tr>
       </tbody>
@@ -26,36 +26,66 @@ export default {
   data() {
     return {
       rooms: [],
+      intervalId: null, // Para guardar el ID del intervalo
     };
   },
   mounted() {
-    this.fetchRooms();
+    this.getInsumos();
+    this.startAutoUpdate(); // Inicia la actualización automática
+  },
+  beforeUnmount() {
+    clearInterval(this.intervalId); // Detiene el intervalo al salir del componente
   },
   methods: {
-    async fetchRooms() {
+    async getInsumos() {
       try {
-        const response = await fetch("https://integradora-backend-linux.onrender.com/espacios", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOb21icmVfVXN1YXJpbyI6Imx1aXNpdmFuIiwiQ29ycmVvX0VsZWN0cm9uaWNvIjoibHVpcy5pdmFuQGV4YW1wbGUuY29tIiwiQ29udHJhc2VuYSI6IkNvbnRyYXNlbmFTZWd1cmFMdWlzMTIzIiwiTnVtZXJvX1RlbGVmb25pY29fTW92aWwiOm51bGx9.9bYcf6iq-tQKIs_aN6oi_Vh7tqBMzKQ2B4BZS2fOw10"
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error("Error en la solicitud: " + response.status);
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+          console.error("Token de autenticación no encontrado.");
+          return;
         }
-
+        const response = await fetch('https://integradora-backend-linux.onrender.com/consumibles', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          }
+        });
+        if (!response.ok) {
+          console.error("Error al obtener los datos. Estado: ", response.status);
+          return;
+        }
         const data = await response.json();
-        console.log("Datos recibidos:", data);
-        this.rooms = data;
+        if (Array.isArray(data)) {
+          // Verifica si hubo cambios antes de actualizar
+          if (JSON.stringify(this.rooms) !== JSON.stringify(data)) {
+            this.rooms = data.map(insumo => ({
+              nombre: insumo.nombre,
+              descripcion: insumo.descripcion,
+              tipo: insumo.tipo,
+              departamento: insumo.departamento,
+              cantidad_existencia: insumo.cantidad_existencia,
+              detalle: insumo.detalle,
+              estatus: insumo.estatus,
+              observaciones: insumo.observaciones,
+              espacio_medico: insumo.espacio_medico
+            }));
+          }
+        } else {
+          console.error("La respuesta no es un array válido", data);
+        }
       } catch (error) {
-        console.error("Error al obtener los datos:", error);
+        console.error("Hubo un error al obtener los datos:", error);
       }
     },
-  },
+
+    startAutoUpdate() {
+      this.intervalId = setInterval(this.getInsumos, 3000); 
+    }
+  }
 };
 </script>
+
 
 <style scoped>
 .table-container {
