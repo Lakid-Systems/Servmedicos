@@ -130,6 +130,37 @@ export default {
           Descripcion: this.nuevaDescripcion,
           Estatus: this.nuevoEstatus,
         };
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+          console.error("Token de autenticación no encontrado.");
+          return;
+        }
+
+        fetch('https://integradora-backend-linux.onrender.com/areas_medicas', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newArea),
+        })
+        .then(response => {
+          if (!response.ok) {
+            console.error("Error al agregar el área. Estado: ", response.status);
+            return;
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data) {
+            console.log("Área agregada:", data);
+          } else {
+            console.error("No se recibió respuesta válida al agregar el área.");
+          }
+        })
+        .catch(error => {
+          console.error("Hubo un error al agregar el área:", error);
+        });
 
         this.rooms.push(newArea); // Añadir el nuevo área a la tabla
         this.cerrarFormulario(); // Cerrar el formulario después de agregar

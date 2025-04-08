@@ -207,8 +207,34 @@ export default {
           espacio_medico: this.nuevoEspacioMedico,
         };
 
-        this.rooms.push(newInsumo); // Añadir el nuevo insumo a la tabla
-        this.cerrarFormulario(); // Cerrar el formulario después de agregar
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+          console.error("Token de autenticación no encontrado.");
+          return;
+        }
+
+        fetch('https://integradora-backend-linux.onrender.com/consumibles', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newInsumo),
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Error en la solicitud: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log("Insumo agregado:", data);
+            this.rooms.push(data); // Agrega el nuevo insumo a la tabla
+            this.cerrarFormulario(); // Cierra el formulario después de agregar
+          })
+          .catch(error => {
+            console.error("Error al agregar el insumo:", error);
+          });
       } else {
         alert("Por favor ingresa todos los datos.");
       }
@@ -232,7 +258,8 @@ export default {
   border-radius: 50px;
 }
 
-.room-table th, .room-table td {
+.room-table th,
+.room-table td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ddd;
@@ -273,10 +300,12 @@ export default {
   background-color: white;
   padding: 15px;
   border-radius: 12px;
-  width: 450px; /* Reducido y adaptado */
+  width: 450px;
+  /* Reducido y adaptado */
   max-width: 90%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 80px; /* Aumento el margen superior para bajarlo más */
+  margin-top: 80px;
+  /* Aumento el margen superior para bajarlo más */
 }
 
 .modal-content h3 {
@@ -299,14 +328,16 @@ export default {
   margin-bottom: 5px;
 }
 
-.form-group input, .form-group select {
+.form-group input,
+.form-group select {
   padding: 6px;
   margin-bottom: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.submit-button, .close-button {
+.submit-button,
+.close-button {
   padding: 8px 15px;
   color: white;
   border: none;
@@ -331,7 +362,7 @@ export default {
 }
 
 .close-button:hover {
-  background-color:  #b7b2b2;
+  background-color: #b7b2b2;
 }
 
 .icono-boton {
